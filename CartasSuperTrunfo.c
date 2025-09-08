@@ -1,22 +1,100 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+    // Carta 1
+    char estado1[20], cod1[10], nome1[20];
+    unsigned long int pop1;
+    int pontos1;
+    float area1, pib1, densidade1, pibPerCapta1, superPoder1;
+
+    // Carta 2
+    char estado2[20], cod2[10], nome2[20];
+    unsigned long int pop2;
+    int pontos2;
+    float area2, pib2, densidade2, pibPerCapta2, superPoder2;
+
+    // Entrada dos dados
+    printf("Digite o nome do Estado da primeira carta: ");
+    scanf(" %19s", estado1);
+
+    printf("Digite o codigo da primeira carta: ");
+    scanf(" %9s", cod1);
+
+    printf("Digite o nome da cidade da primeira carta: ");
+    scanf(" %19s", nome1);
+
+    printf("Digite a populacao da primeira carta: ");
+    scanf("%d", &pop1);
+
+    printf("Digite a area da primeira carta: ");
+    scanf("%f", &area1);
+
+    printf("Digite o PIB da primeira carta: ");
+    scanf("%f", &pib1);
+
+    printf("Digite os pontos turisticos da primeira carta: ");
+    scanf("%d", &pontos1);
+
+    densidade1 = (float) pop1/area1;
+    pibPerCapta1 = (float) pib1/pop1;
+    superPoder1 = (float) pop1 + area1 + pib1+ (float) pontos1 + pibPerCapta1 + (1.0/densidade1);
+
+    // Segunda carta
+    printf("\nDigite o nome do Estado da segunda carta: ");
+    scanf(" %19s", estado2);
+
+    printf("Digite o codigo da segunda carta: ");
+    scanf(" %9s", cod2);
+
+    printf("Digite o nome da cidade da segunda carta: ");
+    scanf(" %19s", nome2);
+
+    printf("Digite a populacao da segunda carta: ");
+    scanf("%d", &pop2);
+
+    printf("Digite a area da segunda carta: ");
+    scanf("%f", &area2);
+
+    printf("Digite o PIB da segunda carta: ");
+    scanf("%f", &pib2);
+
+    printf("Digite os pontos turisticos da segunda carta: ");
+    scanf("%d", &pontos2);
+
+    densidade2 = (float) pop2/area2;
+    pibPerCapta2 = (float) pib2/pop2;
+    superPoder2 = (float) pop2 + area2 + pib2+ (float) pontos2 + pibPerCapta2 + (1.0/densidade2);
+
+    // Saída formatada
+    printf("\n--- Carta 1 ---\n");
+    printf("%s - %s - %s\n", cod1, estado1, nome1);
+    printf("Populacao: %d\n", pop1);
+    printf("Area: %.2f\n", area1);
+    printf("PIB: %.2f\n", pib1);
+    printf("Pontos turisticos: %d\n", pontos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapta1);
+
+    printf("\n--- Carta 2 ---\n");
+
     
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    printf("%s - %s - %s\n", cod2, estado2, nome2);
+    printf("Populacao: %d\n", pop2);
+    printf("Area: %.2f\n", area2);
+    printf("PIB: %.2f\n", pib2);
+    printf("Pontos turisticos: %d\n", pontos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapta2);
+
+    printf("\n--- Comparação de Cartas ---\n");
+
+    printf("Populacao: Carta %d venceu (%d)\n", (pop1 > pop2 ? 1 : 2), (pop1 > pop2));
+    printf("Area: Carta %d venceu (%d)\n", (area1 > area2 ? 1 : 2), (area1 > area2));
+    printf("PIB: Carta %d venceu (%d)\n", (pib1 > pib2 ? 1 : 2), (pib1 > pib2));
+    printf("Pontos Turisticos: Carta %d venceu (%d)\n", (pontos1 > pontos2 ? 1 : 2), (pontos1 > pontos2));
+    printf("Densidade Populacional: Carta %d venceu (%d)\n", (densidade1 < densidade2 ? 1 : 2), (densidade1 < densidade2));
+    printf("PIB per Capita: Carta %d venceu (%d)\n", (pibPerCapta1 > pibPerCapta2 ? 1 : 2), (pibPerCapta1 > pibPerCapta2));
+    printf("Super Poder: Carta %d venceu (%d)\n", (superPoder1 > superPoder2 ? 1 : 2), (superPoder1 > superPoder2));
 
     return 0;
 }
